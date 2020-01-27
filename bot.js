@@ -144,7 +144,7 @@ client.on("guildMemberAdd", async(member) => {
    } catch(e) { }
   }
 })
-//Efe Tarafından Kodlanmıştır Çalınması Kesinlikle YASAKTIR !
+//DEVTR
 client.on("guildMemberRemove", async(member) => {
   let sunucupaneli = await db.fetch(`sunucupanel_${member.guild.id}`)
   if(sunucupaneli) {
