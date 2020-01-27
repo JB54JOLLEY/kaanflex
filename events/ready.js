@@ -13,8 +13,8 @@ module.exports = client => {
 
   client.user.setStatus("dnd");
    var oyun = [
-        "Efe!",
-        "NextCode",
+        "JOURNEY",
+        "DEVTR",
         "Buralara Ne Yazarsan Oynuyor Kısmındada Öyle Gozukur.",
         " Burada Aynı şeiklde",
 
