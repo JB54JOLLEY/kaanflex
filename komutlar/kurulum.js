@@ -11,7 +11,7 @@ exports.run = async(client, message, args) => {
 
   if(panel) return message.channel.send(`Bu sunucuda panel zaten ayarlanmış! Devredışı bırakmak için;  \`${prefix}statskapat\``)
   
-      message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('Sunucu Panel').setDescription('Gerekli dosaylar kurulsun mu?.').setFooter('Onaylıyorsan 15 saniye içerisinde "evet" yazmalısın.'))
+      message.channel.send(new Discord.RichEmbed().setColor('RED').setTitle('📊 SERVER PANEL').setDescription('Gerekli dosaylar kurulsun mu?.').setFooter('Onaylıyorsan 15 saniye içerisinde "evet" yazmalısın.'))
 .then(() => {
 message.channel.awaitMessages(response => response.content === 'evet', {
 max: 1,
@@ -23,30 +23,30 @@ errors: ['time'],
   db.set(`sunucupanel_${message.guild.id}`, message.guild.id)
   try{
   let role = message.guild.roles.find("name", "@everyone");
-  message.guild.createChannel(`${client.user.username} 📊 SERVER PANEL`, 'category', [{id: message.guild.id, deny: ['CONNECT']}]);
-        message.guild.createChannel(`Toplam Üye • ${message.guild.members.size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} 📊 SERVER PANEL`))).then(c => {
+  message.guild.createChannel(`📊 SERVER PANEL`, 'category', [{id: message.guild.id, deny: ['CONNECT']}]);
+        message.guild.createChannel(`Toplam Üye • ${message.guild.members.size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `📊 SERVER PANEL`))).then(c => {
       c.overwritePermissions(role, {
           CONNECT: false,
       });
   })
   
-        message.guild.createChannel(`Aktif Üye • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} 📊 SERVER PANEL`))).then(c => {
+        message.guild.createChannel(`Aktif Üye • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `📊 SERVER PANEL`))).then(c => {
       c.overwritePermissions(role, {
           CONNECT: false,
       });
   })
   
-        message.guild.createChannel(`Botlar • ${message.guild.members.filter(m => m.user.bot).size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} 📊 SERVER PANEL`))).then(c => {
+        message.guild.createChannel(`Botlar • ${message.guild.members.filter(m => m.user.bot).size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `📊 SERVER PANEL`))).then(c => {
       c.overwritePermissions(role, {
           CONNECT: false,
       });
   })
   
-        message.guild.createChannel(`Rekor Aktiflik • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} 📊 SERVER PANEL`))).then(c => {
+        message.guild.createChannel(`Rekor Aktiflik • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `📊 SERVER PANEL`))).then(c => {
       c.overwritePermissions(role, {
           CONNECT: false,
       });
-  })//Efe
+  })
   db.set(`panelrekor_${message.guild.id}`, message.guild.members.filter(off => off.presence.status !== 'offline').size)
   
   message.channel.send(`Sunucu panel için gerekli kanallar oluşturulup, ayarlamalar yapıldı!  \`(Oda isimlerini değiştirmeyin, çalışmaz!)\``)
