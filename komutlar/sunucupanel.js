@@ -4,25 +4,12 @@ const ayarlar = require('../ayarlar.json');
 const db = require('quick.db');
 exports.run = async(client, message, args) => {
   let prefix = await require('quick.db').fetch(`prefix_${message.guild.id}`) || ayarlar.prefix
-  if(!message.member.hasPermission('SEND_MESSAGES')) return message.reply('Bu komutu kullanabilmek için `Yönetici` iznine sahip olmalısın!')
-  let panel = await db.fetch(`sunucupanel_${message.guild.id}`)
-  
+  if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('Bu komutu kullanabilmek için `Yönetici` iznine sahip olmalısın!')
+  let panel = await db.fetch(`sunucupanel_${message.guild.id}`)  
   let rekoronline = await db.fetch(`panelrekor_${message.guild.id}`)
-  if(args[0] === "sil" || args[0] === "kapat") {
-    db.delete(`sunucupanel_${message.guild.id}`)
-    db.delete(`panelrekor_${message.guild.id}`)
-  try{//efe
-    message.guild.channels.find(x =>(x .name).includes("📊 SERVER PANEL")).delete()
-    message.guild.channels.find(x =>(x .name).includes("Toplam Üye •")).delete()
-    message.guild.channels.find(x =>(x .name).includes("Aktif Üye •")).delete()
-    message.guild.channels.find(x =>(x .name).includes("Botlar •")).delete()
-    message.guild.channels.find(x =>(x .name).includes("Rekor Aktiflik •")).delete()
-  } catch(e) { }
-    message.channel.send(`Ayarlanan sunucu paneli başarıyla devre dışı bırakıldı!`)
-   return 
-  }//Efe
 
-  if(panel) return message.channel.send(`Bu sunucuda panel zaten ayarlanmış! Devredışı bırakmak için;  \`${prefix}sunucupanel sil\``)
+
+  if(panel) return message.channel.send(`Bu sunucuda panel zaten ayarlanmış! Devredışı bırakmak için;  \`${prefix}statskapat\``)
   
       message.channel.send(new Discord.RichEmbed().setColor('RANDOM').setTitle('Sunucu Panel').setDescription('Gerekli dosaylar kurulsun mu?.').setFooter('Onaylıyorsan 15 saniye içerisinde "evet" yazmalısın.'))
 .then(() => {
@@ -36,8 +23,8 @@ errors: ['time'],
   db.set(`sunucupanel_${message.guild.id}`, message.guild.id)
   try{
   let role = message.guild.roles.find("name", "@everyone");
-  message.guild.createChannel(`${client.user.username} • Sunucu Panel`, 'category', [{id: message.guild.id, deny: ['CONNECT']}]);
-        message.guild.createChannel(`Toplam Üye • ${message.guild.members.size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} • Sunucu Panel`))).then(c => {
+  message.guild.createChannel(`${client.user.username} 📊 SERVER PANEL`, 'category', [{id: message.guild.id, deny: ['CONNECT']}]);
+        message.guild.createChannel(`Toplam Üye • ${message.guild.members.size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} 📊 SERVER PANEL`))).then(c => {
       c.overwritePermissions(role, {
           CONNECT: false,
       });
@@ -76,13 +63,13 @@ errors: ['time'],
 exports.conf = {
   enabled: true,
   guildOnly: true,
-  aliases: ["sunucu-panel"],
+  aliases: ["kurulum"],
   permLevel: 3
 };
 
 exports.help = {
-  name: 'sunucupanel',
+  name: 'kurulum',
   description: 'Sunucu İstatistiklerini Gösteren Panel Kurar Ve Sürekli Olarak Günceller.',
-  usage: 'sunucupanel',
+  usage: 'kurulum',
   kategori: 'yetkili'
 };
