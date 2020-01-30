@@ -47,6 +47,12 @@ errors: ['time'],
           CONNECT: false,
       });
   })
+      message.guild.createChannel(`Seste • ${message.guild.members.filter(a => a.voiceChannel).size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `📊 SERVER PANEL`))).then(c => {
+      c.overwritePermissions(role, {
+          CONNECT: false,
+      });
+  })
+  
   db.set(`panelrekor_${message.guild.id}`, message.guild.members.filter(off => off.presence.status !== 'offline').size)
   
   message.channel.send(`Sunucu panel için gerekli kanallar oluşturulup, ayarlamalar yapıldı!  \`(Oda isimlerini değiştirmeyin, çalışmaz!)\``)
