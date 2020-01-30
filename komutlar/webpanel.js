@@ -8,8 +8,9 @@ exports.run = async(client, message, args) => {
 .setColor("BLUE")
 .setTitle("ST-AT BOT")
  .setURL("https://discordapp.com/oauth2/authorize?client_id=647386467844227074&scope=bot&permissions=8")
+  .setDescription(`Botu İnternet Sitemizden Yönetebilirsiniz.`)
 
- .addField("Webpanel", `https://www.mcadventuretime.com/discord/`)
+ .addField("Website", `https://www.mcadventuretime.com/discord/`)
 
  .setFooter("© Mcadventuretime.com", client.user.avatarURL)
  message.channel.send(Embed)
