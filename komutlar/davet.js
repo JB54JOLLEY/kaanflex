@@ -8,9 +8,9 @@ exports.run = async(client, message, args) => {
 .setColor("BLUE")
 .setTitle("ST-AT BOT")
  .setURL("https://discordapp.com/oauth2/authorize?client_id=647386467844227074&scope=bot&permissions=8")
-  .setDescription(`Botu İnternet Sitemizden Yönetebilirsiniz.`)
+  .setDescription(`Sunucuna İstatistik Paneli Yapmak İçin Davet Edebilirsin`)
 
- .addField("Website", `https://www.google.com/`)
+ .addField("Davet Linki.", `https://www.google.com/`)
 
  .setFooter("© Mcadventuretime.com", client.user.avatarURL)
  message.channel.send(Embed)
@@ -24,7 +24,7 @@ module.exports.conf = {
 };
 
 module.exports.help = {
-  name: 'webpanel',
-  description: 'Webpaneli Gösterir.',
-  usage: 'webpanel'
+  name: 'davet',
+  description: 'Davet Et.',
+  usage: 'davet'
 };
