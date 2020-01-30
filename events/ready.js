@@ -1,32 +1,21 @@
 const chalk = require('chalk');
 const moment = require('moment');
 const Discord = require('discord.js');
-const ayarlar = require('../cT.json');
+const ayarlar = require('../ayarlar.json');
 
 var prefix = ayarlar.prefix;
-var version = ayarlar.version;
-var yapimci = ayarlar.yapimci;
 
-module.exports = client => {
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Aktif, Komutlar yüklendi!`);
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
 
-  client.user.setStatus("dnd");
-   var oyun = [
-        "JOURNEY",
-        "DEVTR",
-        "Buralara Ne Yazarsan Oynuyor Kısmındada Öyle Gozukur.",
-        " Burada Aynı şeiklde",
-
-    ];
-
-    setInterval(function() {
-
-        var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
-
-        client.user.setActivity(oyun[random], {type: 'WATCHING'})      
-        }, 12000);
+module.exports = async client => {
+    client.appInfo = await client.fetchApplication();
+    setInterval( async () => {
+      client.appInfo = await client.fetchApplication();
+    }, 60000);
   
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Oyun ismi ayarlandı!`);
-  console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
+  console.log(`BOT: ${client.user.username} ismi ile giriş yapıldı!`);
+  client.user.setStatus("oline");
+  client.user.setGame(`st!davet🔥 + st!yardım + st!botbilgi 🔥BETA 0.0.1 `);
+  console.log(`BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
+  require("../util/dashboard.js")(client);
 };
+

@@ -12,7 +12,7 @@ exports.run = async(client, message, args) => {
     db.delete(`sunucupanel_${message.guild.id}`)
     db.delete(`panelrekor_${message.guild.id}`)
   try{//efe
-    message.guild.channels.find(x =>(x .name).includes("• Sunucu Panel")).delete()
+    message.guild.channels.find(x =>(x .name).includes("📊 SERVER PANEL")).delete()
     message.guild.channels.find(x =>(x .name).includes("Toplam Üye •")).delete()
     message.guild.channels.find(x =>(x .name).includes("Aktif Üye •")).delete()
     message.guild.channels.find(x =>(x .name).includes("Botlar •")).delete()
@@ -43,19 +43,19 @@ errors: ['time'],
       });
   })
   
-        message.guild.createChannel(`Aktif Üye • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} • Sunucu Panel`))).then(c => {
+        message.guild.createChannel(`Aktif Üye • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} 📊 SERVER PANEL`))).then(c => {
       c.overwritePermissions(role, {
           CONNECT: false,
       });
   })
   
-        message.guild.createChannel(`Botlar • ${message.guild.members.filter(m => m.user.bot).size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} • Sunucu Panel`))).then(c => {
+        message.guild.createChannel(`Botlar • ${message.guild.members.filter(m => m.user.bot).size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} 📊 SERVER PANEL`))).then(c => {
       c.overwritePermissions(role, {
           CONNECT: false,
       });
   })
   
-        message.guild.createChannel(`Rekor Aktiflik • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} • Sunucu Panel`))).then(c => {
+        message.guild.createChannel(`Rekor Aktiflik • ${message.guild.members.filter(off => off.presence.status !== 'offline').size}`, 'voice').then(channel => channel.setParent(message.guild.channels.find(channel => channel.name === `${client.user.username} 📊 SERVER PANEL`))).then(c => {
       c.overwritePermissions(role, {
           CONNECT: false,
       });

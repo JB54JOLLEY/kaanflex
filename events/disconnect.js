@@ -1,3 +1,3 @@
 module.exports = client => {
-  console.log(`Bağnaltın koptu! ${new Date()}`);
+  console.log(`Bağnlantın koptu! ${new Date()}`);
 }; 
