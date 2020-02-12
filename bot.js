@@ -206,5 +206,7 @@ client.on("guildBanAdd", async(member) => {
   }
 })
 
+
+
 client.login(ayarlar.token);
 
