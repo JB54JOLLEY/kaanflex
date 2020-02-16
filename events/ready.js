@@ -18,7 +18,7 @@ var oyun = [
   console.log(`[ST-AT] BOT: Aktif, Komutlar yüklendi!`);
   console.log(`[ST-AT] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
   client.user.setStatus("online");
-  client.user.setActivity(`st!davet🔥 + st!yardım🔥 + st!botbilgi🔥 BETA  0.0.1`);
+  client.user.setActivity(`st!davet🔥 + st!yardım🔥 + st!botbilgi🔥 Developed By Enes`);
   console.log(`[ST-AT] BOT: Oyun ismi ayarlandı!`);
   console.log(`[ST-AT] BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 };
