@@ -10,7 +10,7 @@ exports.run = async(client, message, args) => {
    {
     db.delete(`sunucupanel_${message.guild.id}`)
     db.delete(`panelrekor_${message.guild.id}`)
-  try{//efe
+  try{
     message.guild.channels.find(x =>(x .name).includes("📊 SERVER PANEL")).delete()
     message.guild.channels.find(x =>(x .name).includes("Toplam Üye •")).delete()
     message.guild.channels.find(x =>(x .name).includes("Aktif Üye •")).delete()
