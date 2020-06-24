@@ -11,11 +11,11 @@ exports.run = (client, message, args) => {
     .setTitle("ST-AT")
     .setURL("https://goo.gl/")
     .setDescription(
-      "www.Mcadventuretime.com Tarafından Hazırlanmış Botdur İstatistik Listeleme İçindir st!yardım"
+      "R3LASE Tarafından Hazırlanmış Botdur İstatistik Listeleme İçindir st!yardım"
     )
     .setColor("BLUE")
     .setTimestamp()
-    .setFooter("© Mcadventuretime.com", client.user.avatarURL)
+    .setFooter("© R3LASE", client.user.avatarURL)
     .addField(
       "Kullanılan RAM miktarı",
       `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`
