@@ -3,17 +3,17 @@ const Discord = require("discord.js");
 exports.run = async (client, message, args) => {
   const Embed = new Discord.RichEmbed()
     .setTimestamp()
-    .setAuthor("ST-AT", client.user.avatarURL)
+    .setAuthor("✫ Stern Stats", client.user.avatarURL)
     .setColor("BLUE")
-    .setTitle("ST-AT BOT")
+    .setTitle("✫ Stern Stats")
     .setURL(
-      "https://discordapp.com/oauth2/authorize?client_id=647386467844227074&scope=bot&permissions=8"
+      "https://discord.com/oauth2/authorize?client_id=752044928774963260&scope=bot&permissions=8"
     )
     .setDescription(`Sunucuna İstatistik Paneli Yapmak İçin Davet Edebilirsin`)
 
-    .addField("Davet Linki.", `https://www.google.com/`)
+    .addField("Davet Linki.", `https://discord.com/oauth2/authorize?client_id=752044928774963260&scope=bot&permissions=8`)
 
-    .setFooter("© Mcadventuretime.com", client.user.avatarURL);
+    .setFooter("✫ Stern Stats", client.user.avatarURL);
   message.channel.send(Embed);
 };
 

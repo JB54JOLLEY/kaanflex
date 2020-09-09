@@ -3,11 +3,11 @@ const Discord = require("discord.js");
 exports.run = async (client, message, args) => {
   const Embed = new Discord.RichEmbed()
     .setTimestamp()
-    .setAuthor("ST-AT", client.user.avatarURL)
+    .setAuthor("✫ Stern Stats", client.user.avatarURL)
     .setColor("BLUE")
-    .setTitle("R3LASE ST-AT BOT")
+    .setTitle("✫ Stern Stats")
     .setURL(
-      "https://discordapp.com/oauth2/authorize?client_id=653957385123266560&scope=bot&permissions=8"
+      "https://discord.com/oauth2/authorize?client_id=752044928774963260&scope=bot&permissions=8"
     )
     .setDescription(`Sunucu İstatistiklerini Sunan Bir Botdur.`)
 
@@ -16,11 +16,11 @@ exports.run = async (client, message, args) => {
       `Stats Odası Açıp Kapatmak İçin Bu 2 Komut Yeterlidir.`
     )
 
-    .addField("/botbilgi", `ST-AT Bot Hakkında Bilgi Alırsınız!`)
+    .addField("/botbilgi", `✫ Stern Stats Hakkında Bilgi Alırsınız!`)
 
-    .addField("/davet", `ST-AT Botunu Davet Edebilirsiniz!`)
+    .addField("/davet", `✫ Stern Stats Botunu Davet Edebilirsiniz!`)
 
-    .addField("/webpanel", `ST-AT Odalarının İsimlerini Değiştirebilirsiniz!`)
+    .addField("/webpanel", `✫ Stern Stats Odalarının İsimlerini Değiştirebilirsiniz!`)
 
     .setFooter("© R3LEASE", client.user.avatarURL);
   message.channel.send(Embed);

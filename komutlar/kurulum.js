@@ -21,7 +21,7 @@ exports.run = async (client, message, args) => {
     .send(
       new Discord.RichEmbed()
         .setColor("AQUA")
-        .setTitle("📊 R3LASE Sıralama")
+        .setTitle("📊  Sıralama")
         .setDescription("LeaderBoard Ayarlansın mı ?")
         .setFooter('Onaylıyorsan 15 saniye içerisinde "evet" yazmalısın.')
     )
@@ -47,7 +47,7 @@ exports.run = async (client, message, args) => {
               .then(channel =>
                 channel.setParent(
                   message.guild.channels.find(
-                    channel => channel.name === `📊 R3LASE Sıralama`
+                    channel => channel.name === `📊 Stern Sıralama`
                   )
                 )
               )
@@ -69,7 +69,7 @@ exports.run = async (client, message, args) => {
               .then(channel =>
                 channel.setParent(
                   message.guild.channels.find(
-                    channel => channel.name === `📊 R3LASE Sıralama`
+                    channel => channel.name === `📊 Stern Sıralama`
                   )
                 )
               )
@@ -89,7 +89,7 @@ exports.run = async (client, message, args) => {
               .then(channel =>
                 channel.setParent(
                   message.guild.channels.find(
-                    channel => channel.name === `📊 R3LASE Sıralama`
+                    channel => channel.name === `📊 Stern Sıralama`
                   )
                 )
               )
@@ -111,7 +111,7 @@ exports.run = async (client, message, args) => {
               .then(channel =>
                 channel.setParent(
                   message.guild.channels.find(
-                    channel => channel.name === `📊 R3LASE Sıralama`
+                    channel => channel.name === `📊 Stern Sıralama`
                   )
                 )
               )
