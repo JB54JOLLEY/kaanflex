@@ -21,8 +21,8 @@ exports.run = async (client, message, args) => {
     .send(
       new Discord.RichEmbed()
         .setColor("AQUA")
-        .setTitle("📊  Sıralama")
-        .setDescription("LeaderBoard Ayarlansın mı ?")
+        .setTitle("✫ Stern Sıralama")
+        .setDescription("Stats Ayarlansın mı ?")
         .setFooter('Onaylıyorsan 15 saniye içerisinde "evet" yazmalısın.')
     )
     .then(() => {
@@ -36,7 +36,7 @@ exports.run = async (client, message, args) => {
           db.set(`sunucupanel_${message.guild.id}`, message.guild.id);
           try {
             let role = message.guild.roles.find("name", "@everyone");
-            message.guild.createChannel(`📊 R3LASE Sıralama`, "category", [
+            message.guild.createChannel(`✫ Stern Sıralama`, "category", [
               { id: message.guild.id, deny: ["CONNECT"] }
             ]);
             message.guild
@@ -47,7 +47,7 @@ exports.run = async (client, message, args) => {
               .then(channel =>
                 channel.setParent(
                   message.guild.channels.find(
-                    channel => channel.name === `📊 Stern Sıralama`
+                    channel => channel.name === `✫ Stern Sıralama`
                   )
                 )
               )
@@ -69,7 +69,7 @@ exports.run = async (client, message, args) => {
               .then(channel =>
                 channel.setParent(
                   message.guild.channels.find(
-                    channel => channel.name === `📊 Stern Sıralama`
+                    channel => channel.name === `✫ Stern Sıralama`
                   )
                 )
               )
@@ -89,7 +89,7 @@ exports.run = async (client, message, args) => {
               .then(channel =>
                 channel.setParent(
                   message.guild.channels.find(
-                    channel => channel.name === `📊 Stern Sıralama`
+                    channel => channel.name === `✫ Stern Sıralama`
                   )
                 )
               )
@@ -111,7 +111,7 @@ exports.run = async (client, message, args) => {
               .then(channel =>
                 channel.setParent(
                   message.guild.channels.find(
-                    channel => channel.name === `📊 Stern Sıralama`
+                    channel => channel.name === `✫ Stern Sıralama`
                   )
                 )
               )
@@ -130,7 +130,7 @@ exports.run = async (client, message, args) => {
               .then(channel =>
                 channel.setParent(
                   message.guild.channels.find(
-                    channel => channel.name === `📊 R3LASE Sıralama`
+                    channel => channel.name === `✫ Stern Sıralama`
                   )
                 )
               )
