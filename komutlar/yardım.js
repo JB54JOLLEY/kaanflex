@@ -12,15 +12,13 @@ exports.run = async (client, message, args) => {
     .setDescription(`Sunucu İstatistiklerini Sunan Bir Botdur.`)
 
     .addField(
-      "/kurulum / st!statskapat",
+      "st!kurulum / st!statskapat",
       `Stats Odası Açıp Kapatmak İçin Bu 2 Komut Yeterlidir.`
     )
 
-    .addField("/botbilgi", `✫ Stern Stats Hakkında Bilgi Alırsınız!`)
+    .addField("st!botbilgi", `✫ Stern Stats Hakkında Bilgi Alırsınız!`)
 
-    .addField("/davet", `✫ Stern Stats Botunu Davet Edebilirsiniz!`)
-
-    .addField("/webpanel", `✫ Stern Stats Odalarının İsimlerini Değiştirebilirsiniz!`)
+    .addField("st!davet", `✫ Stern Stats Botunu Davet Edebilirsiniz!`)
 
     .setFooter("© R3LEASE", client.user.avatarURL);
   message.channel.send(Embed);
