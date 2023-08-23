@@ -18,7 +18,7 @@ var oyun = [
   console.log(`[ST-AT] BOT: Aktif, Komutlar yüklendi!`);
   console.log(`[ST-AT] BOT: ${client.user.username} ismi ile giriş yapıldı!`);
   client.user.setStatus("online");
-  client.user.setActivity(`.kurulum`);
+  client.user.setActivity(`Shining Moon ❤ Kaanflex`);
   console.log(`[ST-AT] BOT: Oyun ismi ayarlandı!`);
   console.log(`[ST-AT] BOT: Şu an ` + client.channels.size + ` adet kanala, ` + client.guilds.size + ` adet sunucuya ve ` + client.guilds.reduce((a, b) => a + b.memberCount, 0).toLocaleString() + ` kullanıcıya hizmet veriliyor!`);
 };

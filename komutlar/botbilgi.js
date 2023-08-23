@@ -11,7 +11,7 @@ exports.run = (client, message, args) => {
     .setTitle("Stats")
     .setURL("https://goo.gl/")
     .setDescription(
-      "R3LASE Tarafından Hazırlanmış Botdur İstatistik Listeleme İçindir st!yardım"
+      ""
     )
     .setColor("BLUE")
     .setTimestamp()

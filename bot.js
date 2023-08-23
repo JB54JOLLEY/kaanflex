@@ -12,6 +12,9 @@ const express = require("express");
 require("./util/eventLoader")(client);
 const request = require("request");
 
+client.on("ready", () => {
+  client.channels.get("1143822283308281966").join();
+})
 
 const app = express();
 app.get("/", (request, response) => {
@@ -208,5 +211,5 @@ client.on("guildBanAdd", async(member) => {
 
 
 
-client.login(ayarlar.token);
+client.login(process.env.token);
 

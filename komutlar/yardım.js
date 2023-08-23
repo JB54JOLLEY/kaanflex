@@ -20,7 +20,7 @@ exports.run = async (client, message, args) => {
 
     .addField(".davet", `Stats Botunu Davet Edebilirsiniz!`)
 
-    .setFooter("©Stats", client.user.avatarURL);
+    .setFooter("Shining Moon", client.user.avatarURL);
   message.channel.send(Embed);
 };
 
