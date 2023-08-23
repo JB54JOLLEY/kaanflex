@@ -7,15 +7,15 @@ exports.run = (client, message, args) => {
   var user = message.mentions.users.first() || message.author;
   const duration = client.uptime;
   const embed = new Discord.RichEmbed()
-    .setAuthor("✫ Stern Stats", client.user.avatarURL)
-    .setTitle("✫ Stern Stats")
+    .setAuthor("Stats", client.user.avatarURL)
+    .setTitle("Stats")
     .setURL("https://goo.gl/")
     .setDescription(
       "R3LASE Tarafından Hazırlanmış Botdur İstatistik Listeleme İçindir st!yardım"
     )
     .setColor("BLUE")
     .setTimestamp()
-    .setFooter("✫ Stern Stats", client.user.avatarURL)
+    .setFooter("Stats", client.user.avatarURL)
     .addField(
       "Kullanılan RAM miktarı",
       `${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)} MB`
